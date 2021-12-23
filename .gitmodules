@@ -1,0 +1,3 @@
+[submodule "TSAL"]
+	path = TSAL
+	url = https://github.com/eTechRacing/TSAL
