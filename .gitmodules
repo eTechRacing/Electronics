@@ -1,3 +1,6 @@
 [submodule "TSAL"]
 	path = TSAL
 	url = https://github.com/eTechRacing/TSAL
+[submodule "Dashboard"]
+	path = Dashboard
+	url = https://github.com/eTechRacing/Dashboard
