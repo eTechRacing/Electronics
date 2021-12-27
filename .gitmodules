@@ -4,3 +4,6 @@
 [submodule "Dashboard"]
 	path = Dashboard
 	url = https://github.com/eTechRacing/Dashboard
+[submodule "Accumulator_Indicator"]
+	path = Accumulator_Indicator
+	url = https://github.com/eTechRacing/Accumulator_Indicator
