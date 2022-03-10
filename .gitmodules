@@ -7,3 +7,6 @@
 [submodule "Accumulator_Indicator"]
 	path = Accumulator_Indicator
 	url = https://github.com/eTechRacing/Accumulator_Indicator
+[submodule "Accelerometer"]
+	path = Accelerometer
+	url = https://github.com/eTechRacing/Accelerometer
