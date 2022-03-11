@@ -16,3 +16,6 @@
 [submodule "Shutdown"]
 	path = Shutdown
 	url = https://github.com/eTechRacing/Shutdown
+[submodule "ADCAN"]
+	path = ADCAN
+	url = https://github.com/eTechRacing/ADCAN
