@@ -10,3 +10,6 @@
 [submodule "Accelerometer"]
 	path = Accelerometer
 	url = https://github.com/eTechRacing/Accelerometer
+[submodule "BSPD"]
+	path = BSPD
+	url = https://github.com/eTechRacing/BSPD
