@@ -13,3 +13,6 @@
 [submodule "BSPD"]
 	path = BSPD
 	url = https://github.com/eTechRacing/BSPD
+[submodule "Shutdown"]
+	path = Shutdown
+	url = https://github.com/eTechRacing/Shutdown
