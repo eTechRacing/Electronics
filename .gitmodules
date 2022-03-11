@@ -19,3 +19,6 @@
 [submodule "ADCAN"]
 	path = ADCAN
 	url = https://github.com/eTechRacing/ADCAN
+[submodule "BMS"]
+	path = BMS
+	url = https://github.com/eTechRacing/BMS
