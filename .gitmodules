@@ -22,3 +22,6 @@
 [submodule "BMS"]
 	path = BMS
 	url = https://github.com/eTechRacing/BMS
+[submodule "Inverter"]
+	path = Inverter
+	url = https://github.com/eTechRacing/Inverter
