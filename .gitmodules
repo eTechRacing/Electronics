@@ -25,3 +25,6 @@
 [submodule "Inverter"]
 	path = Inverter
 	url = https://github.com/eTechRacing/Inverter
+[submodule "BamocarD3"]
+	path = BamocarD3
+	url = https://github.com/eTechRacing/BamocarD3
