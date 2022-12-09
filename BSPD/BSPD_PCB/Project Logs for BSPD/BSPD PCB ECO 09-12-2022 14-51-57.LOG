@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=Brake_in Pin=J1-1
+Removed Pin From Net: NetName=LV+_in Pin=J1-3
+Removed Pin From Net: NetName=Hall_in Pin=J1-4
+Removed Pin From Net: NetName=GND Pin=J1-6
+Removed Pin From Net: NetName=GND Pin=U1-4
+Change Component Footprint: Designator=J1 Old Footprint=J_MicroFit_2x3_V New Footprint=J_NanoFit_2x3
+Change Component Comment : Designator=J1 Old Comment=43045-0612 New Comment=J_NanoFit_2x3
+Change component parameters: Designator = "J1" ("J1"); Footprint = "J_MicroFit_2x3_V"; UniqueID = "\NPRTFNYX" ("\NPRTFNYX")
+Added Pin To Net: NetName=LV+_in Pin=J1-1
+Added Pin To Net: NetName=Brake_in Pin=J1-3
+Added Pin To Net: NetName=GND Pin=J1-4
+Added Pin To Net: NetName=Hall_in Pin=J1-6

@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=LV+_in Pin=J1-1
+Removed Pin From Net: NetName=Hall_in Pin=J1-3
+Removed Pin From Net: NetName=GND Pin=J1-4
+Removed Pin From Net: NetName=Brake_in Pin=J1-6
+Added Pin To Net: NetName=Hall_in Pin=J1-1
+Added Pin To Net: NetName=LV+_in Pin=J1-3
+Added Pin To Net: NetName=Brake_in Pin=J1-4
+Added Pin To Net: NetName=GND Pin=J1-6

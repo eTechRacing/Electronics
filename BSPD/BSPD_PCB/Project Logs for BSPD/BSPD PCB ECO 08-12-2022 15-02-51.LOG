@@ -1,0 +1,7 @@
+Removed Member From Class: ClassName=BSPD Member=Q?
+Change Component Designator: OldDesignator=Q4 NewDesignator=Q5
+Change Component Designator: OldDesignator=Q? NewDesignator=Q4
+Change Net Name : Old Net Name=NetQ4_G New Net Name=NetQ5_G
+Change Net Name : Old Net Name=NetQ4_S New Net Name=NetQ5_S
+Change Net Name : Old Net Name=NetQ?_G New Net Name=NetQ4_G
+Added Member To Class: ClassName=BSPD Member=Component Q5 CPH3455-TL-H
