@@ -1,0 +1,32 @@
+Removed Pin From Net: NetName=Reset Pin=C8-2
+Removed Pin From Net: NetName=NetR19_1 Pin=R19-1
+Removed Pin From Net: NetName=+12 Pin=R19-2
+Removed Pin From Net: NetName=GND Pin=R20-1
+Removed Pin From Net: NetName=NetR19_1 Pin=R20-2
+Removed Pin From Net: NetName=GND Pin=U1-4
+Change Component Designator: OldDesignator=R19 NewDesignator=R20
+Change Component Designator: OldDesignator=R20 NewDesignator=R19
+Added Component: Designator=TP27(TestPoint)
+Add component (AddParameter): Name = ".Creator"; Value = "GP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = ".PCBcheck"; Value = "GP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = ".SCHcheck"; Value = "GP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "TestPoint"; VariantName = "[No Variations]"
+Added Component: Designator=TP28(TestPoint)
+Add component (AddParameter): Name = ".Creator"; Value = "GP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = ".PCBcheck"; Value = "GP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = ".SCHcheck"; Value = "GP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "TestPoint"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Reset Pin=C9-1
+Added Pin To Net: NetName=Reset Pin=Q4-D
+Added Pin To Net: NetName=NetR19_1 Pin=R19-1
+Added Pin To Net: NetName=+12 Pin=R19-2
+Added Pin To Net: NetName=GND Pin=R20-1
+Added Pin To Net: NetName=NetR19_1 Pin=R20-2
+Added Pin To Net: NetName=Reset Pin=TP27-1
+Added Pin To Net: NetName=NetC8_2 Pin=C8-2
+Added Pin To Net: NetName=NetC8_2 Pin=Q4-G
+Added Pin To Net: NetName=NetC8_2 Pin=R18-2
+Added Pin To Net: NetName=NetC8_2 Pin=TP28-1
+Added Net: Name=NetC8_2
+Added Member To Class: ClassName=BSPD Member=Component TP27 TestPoint
+Added Member To Class: ClassName=BSPD Member=Component TP28 TestPoint

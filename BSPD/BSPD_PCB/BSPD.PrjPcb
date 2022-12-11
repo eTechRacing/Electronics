@@ -318,7 +318,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=OAVCUFBY
 
 [Document17]
 DocumentPath=BSPD.PCBDwf
@@ -370,6 +370,10 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[GeneratedDocument1]
+DocumentPath=Design Rule Check - BSPD.html
+DItemRevisionGUID=
 
 [Parameter1]
 Name=Company

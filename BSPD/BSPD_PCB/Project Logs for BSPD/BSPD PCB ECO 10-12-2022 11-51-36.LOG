@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=Reset Pin=TP27-1
+Removed Member From Class: ClassName=BSPD Member=TP28
+Change Component Designator: OldDesignator=TP28 NewDesignator=TP27
+Added Member To Class: ClassName=BSPD Member=Component R19 CRCW120610K0FKEA
