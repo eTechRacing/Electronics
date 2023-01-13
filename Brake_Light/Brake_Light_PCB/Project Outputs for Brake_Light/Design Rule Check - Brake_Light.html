@@ -1,0 +1,477 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD19\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11/12/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16:17:20</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc" class="file"><acronym title="C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc">C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">47</td></tr>
+</table>
+</td>
+</table><a name="IDXWDO3ZNAIBKVITO4VCX0AHWSXCRMJHXAAN5QL4EDOJ3HN5KD2ZDB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXFZG1BIMTKA2CKFA2OL3KZQTVPFLRPL2CWRQMYH3G1MXZ1D2IWIB">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMTXBOZEUWFMAPSJSAKF2MY5QWNOFI3VVRYOOG2IYSXBKEN0TQU5G">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAI2X2H3H2BXRV1Y3IG0O1VHJPXJJQLWCNUYJODYDTLSBN4JMTMD">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVPOSGB4EVRJVICBH4SJNADXRVEL2UXTZZMJKFLEMFWQXFTWIMJBC">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLDOIV3ICXMCOL0NW0HKF1YXQXGAWU2C3T4GRD2EIOJV1GORXQQUK">Width Constraint (Min=0.2mm) (Max=5mm) (Preferred=0.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDD3GVZWKDQZHQN5FZWIJTTDEKOHLYQ4H3M1KLZRHSYRCSJPOPC30G">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1K4Z4YB4E5GPCNR2O0KQ0JYUFLMNSU303FYLQ2HK5R4D0ZPYAQTO">Hole Size Constraint (Min=0.025mm) (Max=5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5EZMTUFMDLAODVEEM2NKKUTY5MWDNNWCKIH4QLJTFRYYK40VIKF">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW0ESGN1A4VXTLP3NU3XHREQZ0D5S0CWF53K5KYFLBPFE13A4XRRM">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1YE03CQR2V2DPJKFVGKB2LMD4FLXQWJ5ASUD11HWHPI5IFBJUPPO">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">45</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIMWGDVWE5XMUO5N2DN4Z2EJTTEGDUNGUEEBG2DNCD4GW2BLFBVZD">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEG0WDZYGZB0WI2DEQBZYMR41BDN2M10FTHEOYHIEK5DVEKLJZHI">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYJAYJ5SJBZ4EPSAISLQPOE2IKEADNYVAMNJ5FCITDJGGAPDELUUD">Room Brake_Light (Bounding Region = (0mm, 0mm, 160.5mm, 15.5mm) (InComponentClass('Brake_Light'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHGRCYYBODECBMMPWQFASSYHLYJM0LNZXFCSRN5DDRUP3PEOYSYDG">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">47</td>
+</tr>
+</table><br><a name="ID1YE03CQR2V2DPJKFVGKB2LMD4FLXQWJ5ASUD11HWHPI5IFBJUPPO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1071.147mil|Location2.X=1082.397mil|Location1.Y=471.737mil|Location2.Y=482.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1071.147mil|Location2.X=1082.397mil|Location1.Y=471.737mil|Location2.Y=482.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C1-1(28mm,11.55mm) on Bottom Layer And Track (27.35mm,12.35mm)(27.35mm,12.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1122.328mil|Location2.X=1133.578mil|Location1.Y=471.737mil|Location2.Y=482.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1122.328mil|Location2.X=1133.578mil|Location1.Y=471.737mil|Location2.Y=482.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C1-1(28mm,11.55mm) on Bottom Layer And Track (28.65mm,12.35mm)(28.65mm,12.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1071.147mil|Location2.X=1082.397mil|Location1.Y=501.265mil|Location2.Y=512.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1071.147mil|Location2.X=1082.397mil|Location1.Y=501.265mil|Location2.Y=512.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C1-2(28mm,13.45mm) on Bottom Layer And Track (27.35mm,12.35mm)(27.35mm,12.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1122.328mil|Location2.X=1133.578mil|Location1.Y=501.265mil|Location2.Y=512.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1122.328mil|Location2.X=1133.578mil|Location1.Y=501.265mil|Location2.Y=512.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C1-2(28mm,13.45mm) on Bottom Layer And Track (28.65mm,12.35mm)(28.65mm,12.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1149.887mil|Location2.X=1161.137mil|Location1.Y=473.706mil|Location2.Y=484.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1149.887mil|Location2.X=1161.137mil|Location1.Y=473.706mil|Location2.Y=484.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-1(30mm,11.6mm) on Bottom Layer And Track (29.35mm,12.4mm)(29.35mm,12.7mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1201.068mil|Location2.X=1212.318mil|Location1.Y=473.706mil|Location2.Y=484.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1201.068mil|Location2.X=1212.318mil|Location1.Y=473.706mil|Location2.Y=484.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-1(30mm,11.6mm) on Bottom Layer And Track (30.65mm,12.4mm)(30.65mm,12.7mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1157.978mil|Location2.X=1169.228mil|Location1.Y=548.108mil|Location2.Y=559.358mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1157.978mil|Location2.X=1169.228mil|Location1.Y=548.108mil|Location2.Y=559.358mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.23mm &lt; 0.254mm) Between Pad C2-2(30mm,13.5mm) on Bottom Layer And Text "C2" (30.464mm,14.18mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.23mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1149.887mil|Location2.X=1161.137mil|Location1.Y=503.233mil|Location2.Y=514.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1149.887mil|Location2.X=1161.137mil|Location1.Y=503.233mil|Location2.Y=514.483mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-2(30mm,13.5mm) on Bottom Layer And Track (29.35mm,12.4mm)(29.35mm,12.7mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1201.068mil|Location2.X=1212.318mil|Location1.Y=503.233mil|Location2.Y=514.483mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1201.068mil|Location2.X=1212.318mil|Location1.Y=503.233mil|Location2.Y=514.483mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C2-2(30mm,13.5mm) on Bottom Layer And Track (30.65mm,12.4mm)(30.65mm,12.7mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1006.186mil|Location2.X=1017.436mil|Location1.Y=189.257mil|Location2.Y=200.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1006.186mil|Location2.X=1017.436mil|Location1.Y=189.257mil|Location2.Y=200.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C3-1(27mm,3.825mm) on Bottom Layer And Track (25.7mm,5.175mm)(25.7mm,5.8mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1108.548mil|Location2.X=1119.798mil|Location1.Y=232.564mil|Location2.Y=243.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1108.548mil|Location2.X=1119.798mil|Location1.Y=232.564mil|Location2.Y=243.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C3-2(27mm,7.175mm) on Bottom Layer And Track (28.3mm,5.2mm)(28.3mm,5.825mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1409.729mil|Location2.X=1420.979mil|Location1.Y=37.682mil|Location2.Y=48.932mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1409.729mil|Location2.X=1420.979mil|Location1.Y=37.682mil|Location2.Y=48.932mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C4-1(37.075mm,2.4mm) on Bottom Layer And Track (35.1mm,1.1mm)(35.725mm,1.1mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1366.422mil|Location2.X=1377.672mil|Location1.Y=140.044mil|Location2.Y=151.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1366.422mil|Location2.X=1377.672mil|Location1.Y=140.044mil|Location2.Y=151.294mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C4-2(33.725mm,2.4mm) on Bottom Layer And Track (35.075mm,3.7mm)(35.7mm,3.7mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1409.729mil|Location2.X=1420.979mil|Location1.Y=431.383mil|Location2.Y=442.633mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1409.729mil|Location2.X=1420.979mil|Location1.Y=431.383mil|Location2.Y=442.633mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C5-1(37.075mm,12.4mm) on Bottom Layer And Track (35.1mm,11.1mm)(35.725mm,11.1mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1366.422mil|Location2.X=1377.672mil|Location1.Y=533.745mil|Location2.Y=544.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1366.422mil|Location2.X=1377.672mil|Location1.Y=533.745mil|Location2.Y=544.995mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad C5-2(33.725mm,12.4mm) on Bottom Layer And Track (35.075mm,13.7mm)(35.7mm,13.7mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1715.036mil|Location2.X=1726.286mil|Location1.Y=112.485mil|Location2.Y=123.735mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1715.036mil|Location2.X=1726.286mil|Location1.Y=112.485mil|Location2.Y=123.735mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J2-1(44.73mm,3mm) on Multi-Layer And Track (43.48mm,1.71mm)(43.48mm,4.25mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1755.399mil|Location2.X=1766.649mil|Location1.Y=152.848mil|Location2.Y=164.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1755.399mil|Location2.X=1766.649mil|Location1.Y=152.848mil|Location2.Y=164.098mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J2-1(44.73mm,3mm) on Multi-Layer And Track (43.48mm,4.25mm)(48.48mm,4.25mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1855.399mil|Location2.X=1866.649mil|Location1.Y=152.848mil|Location2.Y=164.098mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1855.399mil|Location2.X=1866.649mil|Location1.Y=152.848mil|Location2.Y=164.098mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J2-2(47.27mm,3mm) on Multi-Layer And Track (43.48mm,4.25mm)(48.48mm,4.25mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1894.974mil|Location2.X=1906.224mil|Location1.Y=112.485mil|Location2.Y=123.735mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1894.974mil|Location2.X=1906.224mil|Location1.Y=112.485mil|Location2.Y=123.735mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.21mm &lt; 0.254mm) Between Pad J2-2(47.27mm,3mm) on Multi-Layer And Track (48.48mm,1.71mm)(48.48mm,4.25mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.21mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1851.462mil|Location2.X=1862.712mil|Location1.Y=461.887mil|Location2.Y=473.137mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1851.462mil|Location2.X=1862.712mil|Location1.Y=461.887mil|Location2.Y=473.137mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J3-1(47.17mm,12.9mm) on Multi-Layer And Track (43.42mm,11.65mm)(48.42mm,11.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1891.824mil|Location2.X=1903.074mil|Location1.Y=502.249mil|Location2.Y=513.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1891.824mil|Location2.X=1903.074mil|Location1.Y=502.249mil|Location2.Y=513.499mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J3-1(47.17mm,12.9mm) on Multi-Layer And Track (48.42mm,11.65mm)(48.42mm,14.19mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1711.887mil|Location2.X=1723.137mil|Location1.Y=502.249mil|Location2.Y=513.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1711.887mil|Location2.X=1723.137mil|Location1.Y=502.249mil|Location2.Y=513.499mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.21mm &lt; 0.254mm) Between Pad J3-2(44.63mm,12.9mm) on Multi-Layer And Track (43.42mm,11.65mm)(43.42mm,14.19mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.21mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1751.462mil|Location2.X=1762.712mil|Location1.Y=461.887mil|Location2.Y=473.137mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1751.462mil|Location2.X=1762.712mil|Location1.Y=461.887mil|Location2.Y=473.137mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J3-2(44.63mm,12.9mm) on Multi-Layer And Track (43.42mm,11.65mm)(48.42mm,11.65mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1982.564mil|Location2.X=1993.814mil|Location1.Y=380.013mil|Location2.Y=391.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1982.564mil|Location2.X=1993.814mil|Location1.Y=380.013mil|Location2.Y=391.263mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J4-1(50.5mm,8.77mm) on Multi-Layer And Track (49.21mm,10.02mm)(51.75mm,10.02mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2022.926mil|Location2.X=2034.176mil|Location1.Y=339.651mil|Location2.Y=350.901mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2022.926mil|Location2.X=2034.176mil|Location1.Y=339.651mil|Location2.Y=350.901mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J4-1(50.5mm,8.77mm) on Multi-Layer And Track (51.75mm,5.02mm)(51.75mm,10.02mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1982.564mil|Location2.X=1993.814mil|Location1.Y=200.076mil|Location2.Y=211.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1982.564mil|Location2.X=1993.814mil|Location1.Y=200.076mil|Location2.Y=211.326mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.21mm &lt; 0.254mm) Between Pad J4-2(50.5mm,6.23mm) on Multi-Layer And Track (49.21mm,5.02mm)(51.75mm,5.02mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.21mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2022.926mil|Location2.X=2034.176mil|Location1.Y=239.651mil|Location2.Y=250.901mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2022.926mil|Location2.X=2034.176mil|Location1.Y=239.651mil|Location2.Y=250.901mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J4-2(50.5mm,6.23mm) on Multi-Layer And Track (51.75mm,5.02mm)(51.75mm,10.02mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=923.07mil|Location2.X=930.736mil|Location1.Y=311.127mil|Location2.Y=318.794mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=923.07mil|Location2.X=930.736mil|Location1.Y=311.127mil|Location2.Y=318.794mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad L1-2(24.643mm,7.332mm) on Bottom Layer And Track (20.9mm,8mm)(25mm,8mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=980.419mil|Location2.X=988.085mil|Location1.Y=311.127mil|Location2.Y=318.794mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=980.419mil|Location2.X=988.085mil|Location1.Y=311.127mil|Location2.Y=318.794mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad L1-2(24.643mm,7.332mm) on Bottom Layer And Track (25mm,8mm)(25mm,12.75mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=715.048mil|Location2.X=726.298mil|Location1.Y=286.475mil|Location2.Y=297.725mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=715.048mil|Location2.X=726.298mil|Location1.Y=286.475mil|Location2.Y=297.725mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.198mm &lt; 0.254mm) Between Pad L2-2(19.357mm,8.168mm) on Bottom Layer And Text "L1" (18.325mm,6.68mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.198mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=744.198mil|Location2.X=751.865mil|Location1.Y=291.442mil|Location2.Y=299.109mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=744.198mil|Location2.X=751.865mil|Location1.Y=291.442mil|Location2.Y=299.109mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad L2-2(19.357mm,8.168mm) on Bottom Layer And Track (19mm,2.75mm)(19mm,7.5mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=801.547mil|Location2.X=809.214mil|Location1.Y=291.442mil|Location2.Y=299.109mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=801.547mil|Location2.X=809.214mil|Location1.Y=291.442mil|Location2.Y=299.109mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad L2-2(19.357mm,8.168mm) on Bottom Layer And Track (19mm,7.5mm)(23.1mm,7.5mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3151.57mil|Location2.X=3162.82mil|Location1.Y=430.981mil|Location2.Y=442.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3151.57mil|Location2.X=3162.82mil|Location1.Y=430.981mil|Location2.Y=442.231mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.18mm &lt; 0.254mm) Between Pad MH1-1(80.25mm,7.5mm) on Multi-Layer And Text "MH1" (81.251mm,11.18mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.18mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1711.895mil|Location2.X=1723.145mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1711.895mil|Location2.X=1723.145mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R1-1(44.5mm,6.1mm) on Bottom Layer And Track (43.625mm,7.1mm)(43.625mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.792mil|Location2.X=1792.042mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.792mil|Location2.X=1792.042mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R1-1(44.5mm,6.1mm) on Bottom Layer And Track (45.375mm,7.1mm)(45.375mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1711.895mil|Location2.X=1723.145mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1711.895mil|Location2.X=1723.145mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R1-2(44.5mm,8.9mm) on Bottom Layer And Track (43.625mm,7.1mm)(43.625mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.792mil|Location2.X=1792.042mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1780.792mil|Location2.X=1792.042mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R1-2(44.5mm,8.9mm) on Bottom Layer And Track (45.375mm,7.1mm)(45.375mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.32mil|Location2.X=1821.57mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.32mil|Location2.X=1821.57mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R2-1(47mm,8.9mm) on Bottom Layer And Track (46.125mm,7.1mm)(46.125mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1879.217mil|Location2.X=1890.467mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1879.217mil|Location2.X=1890.467mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R2-1(47mm,8.9mm) on Bottom Layer And Track (47.875mm,7.1mm)(47.875mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.32mil|Location2.X=1821.57mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.32mil|Location2.X=1821.57mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R2-2(47mm,6.1mm) on Bottom Layer And Track (46.125mm,7.1mm)(46.125mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1879.217mil|Location2.X=1890.467mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1879.217mil|Location2.X=1890.467mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R2-2(47mm,6.1mm) on Bottom Layer And Track (47.875mm,7.1mm)(47.875mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1593.784mil|Location2.X=1605.034mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1593.784mil|Location2.X=1605.034mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R3-1(41.5mm,6.1mm) on Bottom Layer And Track (40.625mm,7.1mm)(40.625mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1662.682mil|Location2.X=1673.932mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1662.682mil|Location2.X=1673.932mil|Location1.Y=266.029mil|Location2.Y=277.279mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R3-1(41.5mm,6.1mm) on Bottom Layer And Track (42.375mm,7.1mm)(42.375mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1593.784mil|Location2.X=1605.034mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1593.784mil|Location2.X=1605.034mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R3-2(41.5mm,8.9mm) on Bottom Layer And Track (40.625mm,7.1mm)(40.625mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1662.682mil|Location2.X=1673.932mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1662.682mil|Location2.X=1673.932mil|Location1.Y=313.273mil|Location2.Y=324.523mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Pad R3-2(41.5mm,8.9mm) on Bottom Layer And Track (42.375mm,7.1mm)(42.375mm,7.9mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDIMWGDVWE5XMUO5N2DN4Z2EJTTEGDUNGUEEBG2DNCD4GW2BLFBVZD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=200.291mil|Location2.X=211.541mil|Location1.Y=509.604mil|Location2.Y=520.854mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=200.291mil|Location2.X=211.541mil|Location1.Y=509.604mil|Location2.Y=520.854mil|Absolute=True">Silk To Silk Clearance Constraint: (0.186mm &lt; 0.254mm) Between Text "J1" (5.878mm,13.18mm) on Bottom Overlay And Track (5.229mm,12.894mm)(15.643mm,12.894mm) on Bottom Overlay Silk Text to Silk Clearance [0.186mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=200.261mil|Location2.X=211.511mil|Location1.Y=509.604mil|Location2.Y=520.854mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\dwegg\Desktop\Electronics Repo\Brake_Light\Brake_Light_PCB\Brake_Light.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=200.261mil|Location2.X=211.511mil|Location1.Y=509.604mil|Location2.Y=520.854mil|Absolute=True">Silk To Silk Clearance Constraint: (0.186mm &lt; 0.254mm) Between Text "J1" (5.878mm,13.18mm) on Bottom Overlay And Track (5.229mm,2.099mm)(5.229mm,12.894mm) on Bottom Overlay Silk Text to Silk Clearance [0.186mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
