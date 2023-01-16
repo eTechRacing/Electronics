@@ -2,26 +2,47 @@
 FileName = Brake_Light.GBR
 AutoAperture = True
 *************************************************************
-Generating : GND
-      File : Brake_Light.G2
+Generating : Bottom Component Outline
+      File : Brake_Light.GM3
 
-    Adding Layer      : GND
-
-    Adding Layer      : Multi-Layer
+    Adding Layer      : Bottom Component Outline
 
 
 Used DCodes :
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
+    D10
+    D38
+    D52
+    D53
 *************************************************************
 
 *************************************************************
-Generating : Bottom Layer
-      File : Brake_Light.GBL
+Generating : Top Component Outline
+      File : Brake_Light.GM2
+
+    Adding Layer      : Top Component Outline
+
+
+Used DCodes :
+    D10
+    D52
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Brake_Light.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D51
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Brake_Light.GBP
+
+    Adding Layer      : Bottom Paste
 
     Adding Layer      : Bottom Layer
 
@@ -29,12 +50,8 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D20
-    D21
-    D22
-    D23
-    D24
     D25
+    D26
     D27
     D28
     D29
@@ -45,43 +62,13 @@ Used DCodes :
     D34
     D35
     D36
-    D37
-    D38
-    D39
-    D40
 *************************************************************
 
 *************************************************************
-Generating : Bottom Pad Master
-      File : Brake_Light.GPB
+Generating : Top Paste
+      File : Brake_Light.GTP
 
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D20
-    D21
-    D22
-    D23
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : Brake_Light.GPT
+    Adding Layer      : Top Paste
 
     Adding Layer      : Top Layer
 
@@ -90,21 +77,36 @@ Generating : Top Pad Master
 
 Used DCodes :
     D11
-    D20
-    D21
-    D22
-    D23
 *************************************************************
 
 *************************************************************
-Generating : Top Overlay
-      File : Brake_Light.GTO
+Generating : Bottom Solder
+      File : Brake_Light.GBS
 
-    Adding Layer      : Top Overlay
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D10
+    D13
+    D14
+    D15
+    D16
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
 *************************************************************
 
 *************************************************************
@@ -124,53 +126,6 @@ Used DCodes :
     D14
     D15
     D16
-    D17
-    D18
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : Brake_Light.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D13
-    D14
-    D15
-    D16
-    D17
-    D41
-    D42
-    D43
-    D44
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
-    D51
-    D52
-*************************************************************
-
-*************************************************************
-Generating : Bottom Component Outline
-      File : Brake_Light.GM3
-
-    Adding Layer      : Bottom Component Outline
-
-
-Used DCodes :
-    D10
-    D40
-    D54
-    D55
 *************************************************************
 
 *************************************************************
@@ -181,32 +136,24 @@ Generating : Bottom Overlay
 
 
 Used DCodes :
-    D39
-    D40
+    D37
+    D38
 *************************************************************
 
 *************************************************************
-Generating : PWR
-      File : Brake_Light.G1
+Generating : Top Overlay
+      File : Brake_Light.GTO
 
-    Adding Layer      : PWR
-
-    Adding Layer      : Multi-Layer
+    Adding Layer      : Top Overlay
 
 
 Used DCodes :
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
+    D10
 *************************************************************
 
 *************************************************************
-Generating : Top Layer
-      File : Brake_Light.GTL
+Generating : Top Pad Master
+      File : Brake_Light.GPT
 
     Adding Layer      : Top Layer
 
@@ -215,35 +162,15 @@ Generating : Top Layer
 
 Used DCodes :
     D11
+    D18
     D19
     D20
     D21
-    D22
-    D23
-    D24
-    D25
 *************************************************************
 
 *************************************************************
-Generating : Top Paste
-      File : Brake_Light.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : Brake_Light.GBP
-
-    Adding Layer      : Bottom Paste
+Generating : Bottom Pad Master
+      File : Brake_Light.GPB
 
     Adding Layer      : Bottom Layer
 
@@ -251,6 +178,42 @@ Generating : Bottom Paste
 
 
 Used DCodes :
+    D18
+    D19
+    D20
+    D21
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Brake_Light.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D25
+    D26
     D27
     D28
     D29
@@ -266,26 +229,60 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 1
-      File : Brake_Light.GM1
+Generating : GND
+      File : Brake_Light.G2
 
-    Adding Layer      : Mechanical 1
+    Adding Layer      : GND
 
-
-Used DCodes :
-    D53
-*************************************************************
-
-*************************************************************
-Generating : Top Component Outline
-      File : Brake_Light.GM2
-
-    Adding Layer      : Top Component Outline
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D10
-    D54
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+*************************************************************
+
+*************************************************************
+Generating : PWR
+      File : Brake_Light.G1
+
+    Adding Layer      : PWR
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : Brake_Light.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
 *************************************************************
 
 *************************************************************
@@ -298,8 +295,8 @@ Generating : Drill Drawing
 
 
 Used DCodes :
-    D56
-    D57
+    D54
+    D55
 *************************************************************
 
 *************************************************************
@@ -348,7 +345,7 @@ Generating : Drill Guide
 
 
 Used DCodes :
-    D56
+    D54
 *************************************************************
 
 *************************************************************
@@ -393,6 +390,6 @@ Generating : Profile
 
 
 Used DCodes :
-    D58
+    D56
 *************************************************************
 

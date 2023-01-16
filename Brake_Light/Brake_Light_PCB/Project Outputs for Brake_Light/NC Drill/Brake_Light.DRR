@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: Brake_Light.PcbDoc   13/01/2023  14:45:50
+NCDrill File Report For: Brake_Light.PcbDoc   16/01/2023  11:38:10
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,7 +7,7 @@ ASCII RoundHoles File : Brake_Light.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.2mm (8mil)                                              Round             81        PTH        244.60mm (9.63inch)
+T1      0.2mm (8mil)                                              Round             65        PTH        223.03mm (8.78inch)
 T2      0.3mm (12mil)                                             Round             116       PTH        289.62mm (11.40inch)
 T3      0.5mm (20mil)                                             Round             8         PTH        14.95mm (0.59inch)
 T4      1.1mm (43mil)                                             Round             6         PTH        17.49mm (0.69inch)
@@ -15,6 +15,6 @@ T5      1.2mm (47mil)                                             Round         
 T6      1.8mm (71mil)                                             Round             2         PTH        7.49mm (0.29inch)
 T7      3.2mm (126mil)                                            Round             1         PTH        0.00mm (0.00inch)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              218
+Totals                                                                              202
 
 Total Processing Time (hh:mm:ss) : 00:00:00
