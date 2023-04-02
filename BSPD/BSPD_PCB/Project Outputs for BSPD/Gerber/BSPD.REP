@@ -2,6 +2,30 @@
 FileName = BSPD.GBR
 AutoAperture = True
 *************************************************************
+Generating : Top Component Outline
+      File : BSPD.GM2
+
+    Adding Layer      : Top Component Outline
+
+
+Used DCodes :
+    D13
+    D14
+    D67
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : BSPD.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D55
+*************************************************************
+
+*************************************************************
 Generating : Bottom Paste
       File : BSPD.GBP
 
@@ -13,7 +37,7 @@ Generating : Bottom Paste
 
 
 Used DCodes :
-    D63
+    D62
 *************************************************************
 
 *************************************************************
@@ -43,11 +67,14 @@ Used DCodes :
     D27
     D28
     D29
+    D30
 *************************************************************
 
 *************************************************************
-Generating : Bottom Layer
-      File : BSPD.GBL
+Generating : Bottom Solder
+      File : BSPD.GBS
+
+    Adding Layer      : Bottom Solder
 
     Adding Layer      : Bottom Layer
 
@@ -55,18 +82,14 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D56
-    D57
-    D58
-    D59
-    D60
-    D61
-    D62
-    D63
-    D64
-    D65
-    D66
-    D67
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
 *************************************************************
 
 *************************************************************
@@ -81,7 +104,6 @@ Generating : Top Solder
 
 
 Used DCodes :
-    D30
     D31
     D32
     D33
@@ -106,79 +128,6 @@ Used DCodes :
     D52
     D53
     D54
-    D55
-*************************************************************
-
-*************************************************************
-Generating : Top Layer
-      File : BSPD.GTL
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D56
-    D57
-    D58
-    D59
-    D60
-    D61
-    D62
-    D63
-    D64
-    D65
-    D66
-    D67
-*************************************************************
-
-*************************************************************
-Generating : Top Component Outline
-      File : BSPD.GM2
-
-    Adding Layer      : Top Component Outline
-
-
-Used DCodes :
-    D13
-    D14
-    D68
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : BSPD.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D58
-    D59
-    D60
-    D61
-    D62
-    D63
-    D64
-    D65
 *************************************************************
 
 *************************************************************
@@ -189,6 +138,21 @@ Generating : Bottom Overlay
 
 
 Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : BSPD.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
 *************************************************************
 
 *************************************************************
@@ -216,6 +180,50 @@ Used DCodes :
     D27
     D28
     D29
+    D30
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : BSPD.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : BSPD.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D55
+    D56
+    D57
     D58
     D59
     D60
@@ -224,55 +232,48 @@ Used DCodes :
     D63
     D64
     D65
+    D66
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 1
-      File : BSPD.GM1
+Generating : Top Layer
+      File : BSPD.GTL
 
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D56
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : BSPD.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
+    Adding Layer      : Top Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
-    D51
-    D52
-    D55
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : BSPD.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
     D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
 *************************************************************
 
 *************************************************************
@@ -285,8 +286,8 @@ Generating : Drill Drawing
 
 
 Used DCodes :
+    D68
     D69
-    D70
 *************************************************************
 
 *************************************************************
@@ -299,7 +300,7 @@ Generating : Drill Guide
 
 
 Used DCodes :
-    D69
+    D68
 *************************************************************
 
 *************************************************************
@@ -308,6 +309,6 @@ Generating : Profile
 
 
 Used DCodes :
-    D71
+    D70
 *************************************************************
 
